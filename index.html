@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Servicio Técnico Informático profesional en Madrid. Reparación de ordenadores, portátiles, mac, redes, mandos PS4/PS5, asistencia a domicilio, remoto y taller.">
+  <title>Técnicos Madrid PC | Reparación e Informática Profesional</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  
+  <style>
+    .glass-card {
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    /* Animación suave para la elevación de botones */
+    .btn-hover-effect {
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.2s ease;
+    }
+    .btn-hover-effect:hover {
+      transform: translateY(-2px);
+    }
+    .btn-hover-effect:active {
+      transform: translateY(0px);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased selection:bg-sky-500 selection:text-white relative pb-16 lg:pb-0">
+
+  <!-- TOP BAR INFO -->
+  <div class="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800 hidden md:block">
+    <div class="container mx-auto flex justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <span class="inline-flex items-center gap-1.5"><i data-lucide="map-pin" class="w-3.5 h-3.5 text-sky-400"></i> Madrid Capital y Comunidad</span>
+        <span class="inline-flex items-center gap-1.5"><i data-lucide="clock" class="w-3.5 h-3.5 text-sky-400"></i> Lun - Sáb: 8:00 - 20:00 (Urgencias 24h)</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <a href="tel:+34600000000" class="hover:text-white transition-colors inline-flex items-center gap-1"><i data-lucide="phone" class="w-3.5 h-3.5 text-emerald-400"></i> +34 600 000 000</a>
+        <a href="https://wa.me/34600000000" target="_blank" rel="noopener" class="hover:text-emerald-400 transition-colors inline-flex items-center gap-1"><i data-lucide="message-square" class="w-3.5 h-3.5 text-emerald-400"></i> WhatsApp Atención Rápida</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
+    <div class="container mx-auto px-4 py-2.5 flex justify-between items-center">
+      <!-- LOGO CON IMAGEN REAL -->
+      <a href="#" class="flex items-center gap-3 group">
+        <img src="logo.png" alt="Técnicos Madrid PC Logo" class="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+      </a>
+
+      <!-- MENÚ DE NAVEGACIÓN DESKTOP -->
+      <nav class="hidden lg:flex space-x-7 items-center font-medium text-sm text-slate-600">
+        <a href="#inicio" class="hover:text-sky-600 transition-colors py-1">Inicio</a>
+        <a href="#calculadora" class="hover:text-sky-600 transition-colors py-1">Calculadora</a>
+        <a href="#servicios" class="hover:text-sky-600 transition-colors py-1">Servicios & Tarifas</a>
+        <a href="#mandos" class="hover:text-sky-600 transition-colors py-1">Mandos PS4/PS5</a>
+        <a href="#licencias" class="hover:text-sky-600 transition-colors py-1">Licencias</a>
+        <a href="#nosotros" class="hover:text-sky-600 transition-colors py-1">Por Qué Elegirnos</a>
+        <a href="#contacto" class="hover:text-sky-600 transition-colors py-1">Contacto</a>
+        <a href="https://wa.me/34600000000?text=Hola,%20solicito%20asesoramiento%20en%20vivo" target="_blank" rel="noopener" class="btn-hover-effect bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-500 hover:to-blue-600 text-white font-semibold px-4 py-2 rounded-full shadow-md shadow-sky-600/20 hover:shadow-lg hover:shadow-sky-600/30 inline-flex items-center justify-center gap-2">
+          <i data-lucide="video" class="w-4 h-4 animate-pulse"></i>
+          <span>Asesoramiento En Vivo</span>
+        </a>
+      </nav>
+
+      <!-- Botón Menú Móvil Hamburger -->
+      <button id="mobileMenuBtn" aria-label="Abrir menú" class="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors flex items-center justify-center">
+        <i data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+
+    <!-- Menú Desplegable Móvil -->
+    <div id="mobileMenu" class="hidden lg:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-3">
+      <a href="#inicio" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-sky-600">Inicio</a>
+      <a href="#calculadora" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-sky-600">Calculadora de Precio</a>
+      <a href="#servicios" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-sky-600">Servicios & Tarifas</a>
+      <a href="#mandos" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-sky-600">Mandos PS4 / PS5</a>
+      <a href="#licencias" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-sky-600">Licencias Oficiales</a>
+      <a href="#nosotros" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-sky-600">Por Qué Elegirnos</a>
+      <a href="#contacto" class="mobile-nav-link block text-sm font-medium text-slate-700 hover:text-sky-600">Contacto</a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION CON FONDO DE IMAGEN REAL (hero-bg.jpg) -->
+  <section id="inicio" class="relative min-h-[90vh] flex items-center justify-center py-16 px-4 bg-cover bg-center bg-no-repeat" style="background-image: url('hero-bg.jpg');">
+    <div class="absolute inset-0 bg-slate-950/80 backdrop-blur-[2px]"></div>
+
+    <div class="container mx-auto max-w-6xl text-white z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative">
+      <div class="lg:col-span-7 text-center lg:text-left">
+        <div class="inline-flex items-center justify-center gap-2 bg-sky-500/20 border border-sky-400/30 px-4 py-1.5 rounded-full text-sky-300 text-xs md:text-sm font-semibold mb-6 backdrop-blur-sm shadow-sm">
+          <i data-lucide="shield-check" class="w-4 h-4 text-sky-400 shrink-0"></i>
+          <span class="leading-none">Servicio Técnico Informático Certificado en Madrid</span>
+        </div>
+
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight mb-6 leading-tight drop-shadow-md">
+          Reparación Informática <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 via-cyan-300 to-blue-200">Rápida, Eficaz y Transparente</span>
+        </h1>
+
+        <p class="text-base md:text-lg text-slate-200 mb-8 font-light leading-relaxed max-w-xl mx-auto lg:mx-0 drop-shadow">
+          Solucionamos fallos de sistema, malware, hardware y redes. Asistencia remota inmediata, diagnóstico a domicilio o recogida/entrega con taller en todo Madrid.
+        </p>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+          <a href="https://wa.me/34600000000?text=Hola,%20necesito%20asistencia%20técnica%20urgente" target="_blank" rel="noopener" class="btn-hover-effect w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 hover:shadow-emerald-500/40 inline-flex items-center justify-center gap-2.5 group">
+            <i data-lucide="message-square" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+            <span class="leading-none">Atención Inmediata por WhatsApp</span>
+          </a>
+          <a href="#servicios" class="btn-hover-effect w-full sm:w-auto bg-slate-800/90 hover:bg-slate-800 text-white border border-slate-700 font-bold px-7 py-3.5 rounded-xl backdrop-blur-sm inline-flex items-center justify-center gap-2">
+            <span class="leading-none">Ver Tarifas Detalladas</span>
+            <i data-lucide="arrow-down" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-slate-700/80 text-left">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0">
+              <i data-lucide="zap" class="w-4 h-4 text-sky-400"></i>
+            </div>
+            <div>
+              <p class="text-[10px] text-slate-400 uppercase tracking-wider leading-none mb-1">Respuesta</p>
+              <p class="text-xs font-bold text-white leading-none">&lt; 60 Minutos</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0">
+              <i data-lucide="truck" class="w-4 h-4 text-sky-400"></i>
+            </div>
+            <div>
+              <p class="text-[10px] text-slate-400 uppercase tracking-wider leading-none mb-1">Recogida</p>
+              <p class="text-xs font-bold text-white leading-none">19,95€ Madrid</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0">
+              <i data-lucide="shield" class="w-4 h-4 text-sky-400"></i>
+            </div>
+            <div>
+              <p class="text-[10px] text-slate-400 uppercase tracking-wider leading-none mb-1">Garantía</p>
+              <p class="text-xs font-bold text-white leading-none">Por Escrito</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-lg bg-sky-500/20 border border-sky-400/30 flex items-center justify-center shrink-0">
+              <i data-lucide="credit-card" class="w-4 h-4 text-sky-400"></i>
+            </div>
+            <div>
+              <p class="text-[10px] text-slate-400 uppercase tracking-wider leading-none mb-1">Pagos</p>
+              <p class="text-xs font-bold text-white leading-none">Bizum / Tarjeta</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Calculadora Rápida Interactiva -->
+      <div id="calculadora" class="lg:col-span-5">
+        <div class="glass-card rounded-2xl p-6 md:p-8 text-white shadow-2xl relative">
+          <div class="flex items-center justify-between mb-4">
+            <h3 class="text-lg font-bold inline-flex items-center gap-2 text-sky-300">
+              <i data-lucide="calculator" class="w-5 h-5"></i>
+              <span>Calculadora de Presupuesto</span>
+            </h3>
+            <span class="text-[10px] bg-sky-500/20 text-sky-300 border border-sky-400/30 px-2.5 py-1 rounded-full font-mono inline-flex items-center justify-center leading-none">Estimación</span>
+          </div>
+
+          <p class="text-xs text-slate-300 mb-6 leading-relaxed">Selecciona las opciones de tu avería para obtener una estimación aproximada en segundos:</p>
+
+          <form id="calcForm" class="space-y-4">
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1.5">Tipo de Servicio</label>
+              <select id="calcType" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 cursor-pointer">
+                <option value="25">Soporte Remoto Online (25€/h)</option>
+                <option value="59" selected>Asistencia Presencial a Domicilio (59€ base)</option>
+                <option value="19.95">Recogida y Entrega Taller (19,95€)</option>
+                <option value="34.95">Reparación Drift Mando PS4/PS5 (34,95€)</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1.5">Tipo de Dispositivo</label>
+              <select id="calcDevice" class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-3 py-2.5 text-sm text-white focus:outline-none focus:border-sky-500 cursor-pointer">
+                <option value="0">Ordenador Sobremesa / PC Gaming</option>
+                <option value="10">Portátil Windows / Ultrabook (+10€ rep. específica)</option>
+                <option value="20">Equipo Apple (MacBook / iMac) (+20€)</option>
+                <option value="0">Mando PS4 / DualSense PS5</option>
+                <option value="0">Servidor / Redes Pyme</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-medium text-slate-300 mb-1.5">Urgencia / Domicilio In Situ</label>
+              <div class="grid grid-cols-2 gap-2">
+                <label class="inline-flex items-center justify-center gap-2 bg-slate-900/60 hover:bg-slate-900/90 border border-slate-700 py-2.5 px-3 rounded-lg cursor-pointer text-xs transition-colors">
+                  <input type="radio" name="urgency" value="0" checked class="accent-sky-500"> Estándar / Taller
+                </label>
+                <label class="inline-flex items-center justify-center gap-2 bg-slate-900/60 hover:bg-slate-900/90 border border-slate-700 py-2.5 px-3 rounded-lg cursor-pointer text-xs transition-colors">
+                  <input type="radio" name="urgency" value="9.95" class="accent-sky-500"> In Situ Domicilio (+9,95€)
+                </label>
+              </div>
+            </div>
+
+            <div class="border-t border-slate-700/80 pt-4 mt-6 flex justify-between items-center">
+              <div>
+                <span class="block text-[10px] text-slate-400 uppercase tracking-wider leading-none mb-1">Estimación aproximada:</span>
+                <span id="calcTotal" class="text-3xl font-black text-sky-400 leading-none">59,00€</span>
+              </div>
+              <button type="button" id="calcBtn" class="btn-hover-effect bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-3 rounded-xl text-xs inline-flex items-center justify-center gap-1.5 shadow-md shadow-emerald-500/20">
+                <i data-lucide="check-circle" class="w-4 h-4"></i>
+                <span>Reservar esta Opción</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SERVICIOS Y TARIFAS -->
+  <section id="servicios" class="py-20 bg-slate-100">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-sky-600 mb-2">Transparencia Total</h2>
+        <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">Servicios e Intervenciones Informáticas</h3>
+        <p class="text-slate-600 mt-3">Sin sorpresas ni costes ocultos. Presupuesto detallado previo a cualquier trabajo físico.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 bg-sky-50 text-sky-600 rounded-xl flex items-center justify-center mb-6 font-bold group-hover:scale-110 transition-transform">
+              <i data-lucide="monitor" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Soporte Remoto Online</h4>
+            <p class="text-slate-600 text-sm mb-6">Conexión ultrarrápida y segura en minutos mediante AnyDesk o TeamViewer.</p>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8">
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Desinfección de virus, adware y malware</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Configuración de cert. digitales y firmas</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Optimización y aceleración de sistema</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Instalación de periféricos y drivers</li>
+            </ul>
+          </div>
+          <div>
+            <div class="border-t border-slate-100 pt-6 mb-6">
+              <span class="text-3xl font-black text-slate-900">25€</span>
+              <span class="text-slate-500 text-sm"> / hora</span>
+            </div>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20solicitar%20soporte%20remoto" target="_blank" rel="noopener" class="btn-hover-effect block w-full text-center bg-slate-900 hover:bg-sky-600 text-white font-semibold py-3 rounded-xl text-sm shadow-sm">
+              Solicitar Remoto Ahora
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-md hover:shadow-2xl transition-all duration-300 border-2 border-sky-500 flex flex-col justify-between relative group">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-sky-500 text-white text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow-sm inline-flex items-center justify-center leading-none">
+            Servicio Más Solicitado
+          </div>
+          <div>
+            <div class="w-12 h-12 bg-sky-500 text-white rounded-xl flex items-center justify-center mb-6 font-bold group-hover:scale-110 transition-transform shadow-md shadow-sky-500/30">
+              <i data-lucide="home" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Asistencia a Domicilio</h4>
+            <p class="text-slate-600 text-sm mb-6">Desplazamiento directo de un técnico especialista a tu vivienda u oficina.</p>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8">
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Cobertura Madrid Capital y Comunidad</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Solución a fallos de Wi-Fi, Redes y Routers</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Reparación e instalación hardware insitu</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Atención a particulares y pymes</li>
+            </ul>
+          </div>
+          <div>
+            <div class="border-t border-slate-100 pt-6 mb-6">
+              <span class="text-3xl font-black text-slate-900">59€</span>
+              <span class="text-slate-500 text-sm"> (1ª Hora incluida)</span>
+              <p class="text-xs text-sky-600 font-semibold mt-1">+35€/h para tiempo adicional</p>
+            </div>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20agendar%20una%20visita%20a%20domicilio" target="_blank" rel="noopener" class="btn-hover-effect block w-full text-center bg-sky-600 hover:bg-sky-700 text-white font-semibold py-3 rounded-xl text-sm shadow-md shadow-sky-600/20">
+              Agendar Técnico a Domicilio
+            </a>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 flex flex-col justify-between group">
+          <div>
+            <div class="w-12 h-12 bg-amber-50 text-amber-600 rounded-xl flex items-center justify-center mb-6 font-bold group-hover:scale-110 transition-transform">
+              <i data-lucide="truck" class="w-6 h-6"></i>
+            </div>
+            <h4 class="text-xl font-bold text-slate-900 mb-2">Recogida y Servicio Taller</h4>
+            <p class="text-slate-600 text-sm mb-6">Transporte seguro y reparación especializada para averías de mayor complejidad.</p>
+            <ul class="space-y-3 text-sm text-slate-600 mb-8">
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Portátiles, MacBooks, iMac, PCs de mesa</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Cambio de pantallas, bisagras y conector carga</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Ampliaciones SSD M.2 y limpieza térmica</li>
+              <li class="flex items-center gap-2.5"><i data-lucide="check" class="w-4 h-4 text-emerald-500 shrink-0"></i> Diagnóstico en taller previo ajuste</li>
+            </ul>
+          </div>
+          <div>
+            <div class="border-t border-slate-100 pt-6 mb-6">
+              <span class="text-3xl font-black text-slate-900">19,95€</span>
+              <span class="text-slate-500 text-sm"> (Ida + Vuelta Madrid)</span>
+              <p class="text-xs text-slate-400 mt-1">*Reparación cotizada tras examen</p>
+            </div>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20solicitar%20recogida%20de%20mi%20equipo" target="_blank" rel="noopener" class="btn-hover-effect block w-full text-center bg-slate-900 hover:bg-sky-600 text-white font-semibold py-3 rounded-xl text-sm shadow-sm">
+              Solicitar Recogida Equipo
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REPARACIÓN DE MANDOS PS4 / PS5 -->
+  <section id="mandos" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="absolute -right-20 top-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/20 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="container mx-auto px-4 max-w-6xl relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-5 order-2 lg:order-1">
+          <div class="relative group">
+            <div class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-indigo-600 rounded-3xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
+            <div class="relative rounded-2xl overflow-hidden bg-slate-800 border border-slate-700 shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db?auto=format&fit=crop&w=800&q=80" alt="Mando PlayStation 5 DualSense Reparación" class="w-full h-80 sm:h-96 object-cover object-center group-hover:scale-105 transition-transform duration-500">
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center bg-slate-900/90 backdrop-blur-md p-3.5 rounded-xl border border-slate-700">
+                <span class="text-xs font-bold text-sky-400 inline-flex items-center gap-1.5">
+                  <i data-lucide="gamepad-2" class="w-4 h-4"></i> DualSense & DualShock 4
+                </span>
+                <span class="text-[10px] bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-2 py-0.5 rounded-full font-bold uppercase tracking-wide">
+                  Tasa 0% Re-Drift
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 order-1 lg:order-2">
+          <div class="inline-flex items-center gap-2 bg-indigo-500/20 border border-indigo-400/30 px-4 py-1.5 rounded-full text-indigo-300 text-xs font-semibold mb-4 backdrop-blur-sm">
+            <i data-lucide="cpu" class="w-4 h-4 text-indigo-400"></i>
+            <span>Taller Especializado en Consolas & Periféricos</span>
+          </div>
+
+          <h3 class="text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
+            Reparación de Drift y Mantenimiento en Mandos <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-indigo-300">PS4 / PS5</span>
+          </h3>
+
+          <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+            ¿Tu personaje se mueve solo o la cámara gira sin control? Solucionamos el molesto efecto <strong class="text-white">Drift</strong> sustituyendo de raíz los potes viejos e instalando sensores electromagnéticos magnéticos de alta precisión.
+          </p>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-5 hover:border-sky-500 transition-colors">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase text-sky-400 tracking-wider">Sustitución Completa</span>
+                <span class="text-2xl font-black text-white">34,95€</span>
+              </div>
+              <h4 class="font-bold text-sm text-white mb-2">Sustitución de los 2 Joysticks + Limpieza</h4>
+              <ul class="text-xs text-slate-300 space-y-2">
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Sensores <strong>Hall Effect Anti-Drift</strong> (Magnéticos)</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Desmontaje y limpieza ultrasónica interna</li>
+                <li class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i> Calibración electrónica digital de zonas muertas</li>
+              </ul>
+            </div>
+
+            <div class="bg-slate-800/80 border border-emerald-500/50 rounded-2xl p-5 hover:border-emerald-400 transition-colors relative">
+              <div class="absolute -top-2.5 right-4 bg-emerald-500 text-white text-[9px] font-bold uppercase px-2 py-0.5 rounded-full">
+                Servicio Express
+              </div>
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-xs font-bold uppercase text-emerald-400 tracking-wider">Atención In Situ</span>
+                <span class="text-2xl font-black text-white">+9,95€</span>
+              </div>
+              <h4 class="font-bold text-sm text-white mb-2">Reparación a Domicilio en Madrid</h4>
+              <p class="text-xs text-slate-300 leading-relaxed mb-3">
+                Un técnico acude a tu domicilio u oficina para reparar o recoger tu mando al instante por solo un suplemento de <strong>9,95€</strong>.
+              </p>
+              <div class="inline-flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400">
+                <i data-lucide="truck" class="w-3.5 h-3.5"></i> Desplazamiento directo incluido
+              </div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/34600000000?text=Hola,%20quiero%20reparar%20el%20drift%20de%20mi%20mando%20de%20PS4/PS5%20con%20Joysticks%20Hall%20Effect" target="_blank" rel="noopener" class="btn-hover-effect w-full sm:w-auto bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg shadow-sky-500/25 inline-flex items-center justify-center gap-2.5">
+            <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+            <span class="leading-none">Reservar Reparación Mando PS4 / PS5</span>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- VENTA DE LICENCIAS DIGITALES CON EXPLICACIÓN DE PRECIOS COMPOSICIÓM SVG -->
+  <section id="licencias" class="py-20 bg-white">
+    <div class="container mx-auto px-4 max-w-6xl">
+      
+      <!-- Encabezado de la Sección -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-sky-600 mb-2">Software Oficial Garantizado</h2>
+        <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">Venta de Licencias Digitales</h3>
+        <p class="text-slate-600 mt-3 text-sm md:text-base">Activación digital directa con envío por WhatsApp o E-mail. Pago 100% seguro por Bizum o Tarjeta.</p>
+      </div>
+
+      <!-- BLOQUE INTRODUCTORIO: ¿POR QUÉ NUESTROS PRECIOS SON MÁS BAJOS? -->
+      <div class="max-w-4xl mx-auto bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200/80 mb-12 shadow-sm">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="p-2.5 bg-sky-500/10 text-sky-600 rounded-xl shrink-0 flex items-center justify-center">
+            <i data-lucide="help-circle" class="w-6 h-6"></i>
+          </div>
+          <h4 class="text-lg font-bold text-slate-900">¿Por qué nuestras licencias tienen un precio tan competitivo?</h4>
+        </div>
+        
+        <p class="text-xs md:text-sm text-slate-600 leading-relaxed mb-4">
+          En <strong class="text-slate-800">Técnicos Madrid PC</strong> adquirimos licencias digitales de tipo <strong class="text-slate-800">OEM y excedentes por volumen de grandes corporaciones y equipos reacondicionados</strong> que no llegaron a activarse. Gracias a la normativa de la Unión Europea (<em class="text-slate-500">Directiva 2009/24/CE sobre la reventa de software legal</em>), es completamente legal comercializar estas licencias originales a un coste muy reducido.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-200/80 pt-4 mt-4">
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+            <span class="text-xs font-medium text-slate-700">100% Legales y Permanentes</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+            <span class="text-xs font-medium text-slate-700">Sin Gastos de Envío Físico</span>
+          </div>
+          <div class="flex items-center gap-2.5">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-500 shrink-0"></i>
+            <span class="text-xs font-medium text-slate-700">Garantía de Reemplazo Inmediato</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filtros de Categoría -->
+      <div class="flex justify-center gap-2 mb-10 flex-wrap">
+        <button class="license-filter-btn btn-hover-effect px-5 py-2 rounded-full text-xs font-semibold bg-sky-600 text-white inline-flex items-center justify-center leading-none" data-filter="all">Todas</button>
+        <button class="license-filter-btn btn-hover-effect px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 inline-flex items-center justify-center leading-none" data-filter="windows">Windows</button>
+        <button class="license-filter-btn btn-hover-effect px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 inline-flex items-center justify-center leading-none" data-filter="office">Office</button>
+        <button class="license-filter-btn btn-hover-effect px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 inline-flex items-center justify-center leading-none" data-filter="security">Antivirus</button>
+      </div>
+
+      <!-- Parrilla de Licencias -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- License 1: Windows 11 Pro -->
+        <div class="license-card bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-500 hover:shadow-lg transition-all flex flex-col justify-between text-center group" data-category="windows">
+          <div>
+            <div class="w-16 h-16 bg-sky-500/10 border border-sky-500/20 rounded-2xl mx-auto flex items-center justify-center p-3.5 mb-4 shadow-sm group-hover:scale-110 transition-transform">
+              <svg class="w-9 h-9 text-sky-500" viewBox="0 0 88 88" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 12.402l35.687-4.86.016 34.883-35.67.228zm35.67 33.328l.028 34.913-35.698-4.904-.008-30.22zm4.326-38.86l47.954-6.87.05 41.348-48.004.188zm48.01 38.31l-.05 41.332-47.956-6.758-.016-34.733z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-slate-900 text-lg">Windows 11 Pro</h4>
+            <p class="text-slate-500 text-xs mt-1 mb-4 leading-relaxed">Licencia OEM de por vida para 1 PC.<br>Activación directa online.</p>
+          </div>
+          <div>
+            <div class="mb-4">
+              <span class="text-2xl font-black text-slate-900">14,95€</span>
+              <span class="text-xs text-slate-400 line-through ml-1">259€</span>
+            </div>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20comprar%20licencia%20Windows%2011%20Pro%20(14.95€)" target="_blank" rel="noopener" class="btn-hover-effect w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs inline-flex items-center justify-center gap-2 shadow-sm">
+              <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+              <span class="leading-none">Comprar por Bizum / Card</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- License 2: Office 2021 Pro Plus -->
+        <div class="license-card bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-500 hover:shadow-lg transition-all flex flex-col justify-between text-center group" data-category="office">
+          <div>
+            <div class="w-16 h-16 bg-amber-500/10 border border-amber-500/20 rounded-2xl mx-auto flex items-center justify-center p-3.5 mb-4 shadow-sm group-hover:scale-110 transition-transform">
+              <svg class="w-9 h-9 text-amber-600" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.17 3.25L13.83.12A1.26 1.26 0 0 0 12.5.3L2.21 4.77A1.25 1.25 0 0 0 1.3 5.92v12.16a1.25 1.25 0 0 0 .91 1.15l10.29 4.47a1.26 1.26 0 0 0 1.33-.18l7.34-3.13a1.25 1.25 0 0 0 .73-1.15V4.4a1.25 1.25 0 0 0-.73-1.15zM12.5 21.17L3.8 17.39V6.61l8.7 3.78v10.78zm8.7-3.17l-6.2 2.65V10.87l6.2-2.7v9.83z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-slate-900 text-lg">Office 2021 Pro Plus</h4>
+            <p class="text-slate-500 text-xs mt-1 mb-4 leading-relaxed">Word, Excel, PowerPoint, Outlook.<br>Licencia permanente.</p>
+          </div>
+          <div>
+            <div class="mb-4">
+              <span class="text-2xl font-black text-slate-900">19,95€</span>
+              <span class="text-xs text-slate-400 line-through ml-1">439€</span>
+            </div>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20comprar%20licencia%20Office%202021%20(19.95€)" target="_blank" rel="noopener" class="btn-hover-effect w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs inline-flex items-center justify-center gap-2 shadow-sm">
+              <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+              <span class="leading-none">Comprar por Bizum / Card</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- License 3: Malwarebytes Premium -->
+        <div class="license-card bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-500 hover:shadow-lg transition-all flex flex-col justify-between text-center group" data-category="security">
+          <div>
+            <div class="w-16 h-16 bg-blue-600/10 border border-blue-600/20 rounded-2xl mx-auto flex items-center justify-center p-3.5 mb-4 shadow-sm group-hover:scale-110 transition-transform">
+              <svg class="w-9 h-9 text-blue-600" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 6h2v2h-2V7zm0 4h2v6h-2v-6z"/>
+              </svg>
+            </div>
+            <h4 class="font-bold text-slate-900 text-lg">Malwarebytes Premium</h4>
+            <p class="text-slate-500 text-xs mt-1 mb-4 leading-relaxed">Protección total contra Malware, Ransomware y Phishing (1 Año).</p>
+          </div>
+          <div>
+            <div class="mb-4">
+              <span class="text-2xl font-black text-slate-900">12,95€</span>
+              <span class="text-xs text-slate-400 line-through ml-1">49€</span>
+            </div>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20comprar%20licencia%20Malwarebytes%20Premium%20(12.95€)" target="_blank" rel="noopener" class="btn-hover-effect w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs inline-flex items-center justify-center gap-2 shadow-sm">
+              <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+              <span class="leading-none">Comprar por Bizum / Card</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- License 4: Pack Combo PRO -->
+        <div class="license-card bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:border-sky-500 hover:shadow-lg transition-all flex flex-col justify-between text-center group relative overflow-hidden" data-category="office windows security">
+          <div class="absolute top-3 right-3 bg-amber-500 text-white text-[9px] font-bold uppercase px-2.5 py-1 rounded-full inline-flex items-center justify-center leading-none">Oferta Pack</div>
+          <div>
+            <div class="w-16 h-16 bg-gradient-to-tr from-sky-600 to-indigo-600 text-white rounded-2xl mx-auto flex items-center justify-center p-3 mb-4 shadow-md group-hover:scale-110 transition-transform">
+              <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                <line x1="12" y1="22.08" x2="12" y2="12"></line>
+              </svg>
+            </div>
+            <h4 class="font-bold text-slate-900 text-lg">Pack Combo PRO</h4>
+            <p class="text-slate-500 text-xs mt-1 mb-4 leading-relaxed">Windows 11 Pro + Office 2021 + Malwarebytes Premium para 1 PC.</p>
+          </div>
+          <div>
+            <div class="mb-4">
+              <span class="text-2xl font-black text-slate-900">29,95€</span>
+              <span class="text-xs text-slate-400 line-through ml-1">600€</span>
+            </div>
+            <a href="https://wa.me/34600000000?text=Hola,%20quiero%20comprar%20el%20Pack%20Combo%20PRO%20(29.95€)" target="_blank" rel="noopener" class="btn-hover-effect w-full bg-emerald-600 hover:bg-emerald-700 text-white font-medium py-2.5 rounded-xl text-xs inline-flex items-center justify-center gap-2 shadow-sm">
+              <i data-lucide="shopping-cart" class="w-3.5 h-3.5"></i>
+              <span class="leading-none">Comprar por Bizum / Card</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS Y GARANTÍA -->
+  <section id="nosotros" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+    <div class="container mx-auto px-4 max-w-6xl relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-xs font-bold uppercase tracking-widest text-sky-400 mb-2">Garantía Profesional</h2>
+          <h3 class="text-3xl md:text-4xl font-extrabold mb-6 leading-tight">Expertos Informáticos con más de 10 Años de Experiencia</h3>
+          <p class="text-slate-300 text-sm md:text-base leading-relaxed mb-6">
+            En <strong class="text-white">Técnicos Madrid PC</strong> solucionamos incidencias técnicas con diagnósticos precisos y componentes de la máxima calidad. Ya sea para tu trabajo diario o para tu ocio, te aseguramos el mejor soporte en tiempo récord.
+          </p>
+          
+          <div class="space-y-4 mb-8">
+            <div class="flex items-start gap-3">
+              <div class="p-2 bg-sky-500/20 text-sky-400 rounded-lg mt-0.5 shrink-0 flex items-center justify-center"><i data-lucide="check-circle-2" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Sin sorpresas en la factura</h4>
+                <p class="text-xs text-slate-400">Siempre te informamos previamente y solicitamos tu aprobación antes de sustituir hardware o realizar intervenciones físicas.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="p-2 bg-sky-500/20 text-sky-400 rounded-lg mt-0.5 shrink-0 flex items-center justify-center"><i data-lucide="shield-check" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Garantía por Escrito</h4>
+                <p class="text-xs text-slate-400">Todas nuestras intervenciones de sustitución de componentes y reparación cuentan con garantía total por escrito.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-3">
+              <div class="p-2 bg-sky-500/20 text-sky-400 rounded-lg mt-0.5 shrink-0 flex items-center justify-center"><i data-lucide="clock" class="w-5 h-5"></i></div>
+              <div>
+                <h4 class="font-bold text-white text-sm">Respuesta Inmediata</h4>
+                <p class="text-xs text-slate-400">Coordinamos asistencia a domicilio o recogida en menos de 1 hora en Madrid Capital y municipios limítrofes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="relative">
+          <div class="glass-card rounded-2xl p-8 border border-slate-700 shadow-2xl relative">
+            <div class="w-16 h-16 bg-sky-500/20 text-sky-400 rounded-2xl flex items-center justify-center mb-6">
+              <i data-lucide="wrench" class="w-8 h-8"></i>
+            </div>
+            <span class="text-xs text-sky-300 font-semibold uppercase tracking-wider block mb-2">Taller Especializado en Madrid</span>
+            <h4 class="text-xl font-bold text-white mb-4">Herramientas de Alta Precisión y Diagnóstico Electrónico</h4>
+            <p class="text-slate-300 text-xs leading-relaxed mb-6">
+              Contamos con banco de pruebas avanzado, reprogramación de bios, rebaling, sustitución de integrados SMD y herramientas avanzadas para la recuperación de datos perdidos.
+            </p>
+            <div class="grid grid-cols-2 gap-4 border-t border-slate-800 pt-4">
+              <div>
+                <span class="text-2xl font-black text-sky-400 block">+1.200</span>
+                <span class="text-[11px] text-slate-400">Equipos Reparados</span>
+              </div>
+              <div>
+                <span class="text-2xl font-black text-emerald-400 block">99.2%</span>
+                <span class="text-[11px] text-slate-400">Clientes Satisfechos</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO Y UBICACIÓN -->
+  <section id="contacto" class="py-20 bg-slate-50">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-sky-600 mb-2">Contacto Directo</h2>
+        <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">¿Necesitas Asistencia Inmediata?</h3>
+        <p class="text-slate-600 mt-3">Escríbenos o llámanos para concertar una cita o resolver tus dudas técnicas al instante.</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+          <div class="p-3 bg-sky-50 text-sky-600 rounded-xl shrink-0 flex items-center justify-center"><i data-lucide="phone-call" class="w-6 h-6"></i></div>
+          <div>
+            <h4 class="font-bold text-slate-900">Teléfono Directo</h4>
+            <p class="text-xs text-slate-500 mt-1 mb-2">Atención inmediata a urgencias</p>
+            <a href="tel:+34600000000" class="text-sky-600 font-bold hover:underline">+34 600 000 000</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+          <div class="p-3 bg-emerald-50 text-emerald-600 rounded-xl shrink-0 flex items-center justify-center"><i data-lucide="message-square" class="w-6 h-6"></i></div>
+          <div>
+            <h4 class="font-bold text-slate-900">WhatsApp 24/7</h4>
+            <p class="text-xs text-slate-500 mt-1 mb-2">Respuesta en pocos minutos</p>
+            <a href="https://wa.me/34600000000" target="_blank" rel="noopener" class="text-emerald-600 font-bold hover:underline">Abrir Chat de WhatsApp</a>
+          </div>
+        </div>
+
+        <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm flex items-start gap-4">
+          <div class="p-3 bg-purple-50 text-purple-600 rounded-xl shrink-0 flex items-center justify-center"><i data-lucide="map-pin" class="w-6 h-6"></i></div>
+          <div>
+            <h4 class="font-bold text-slate-900">Zona de Cobertura</h4>
+            <p class="text-xs text-slate-500 mt-1 mb-2">Madrid Capital, M-30, M-40 y toda la Comunidad de Madrid.</p>
+            <span class="text-xs font-semibold text-slate-700">Servicio presencial & taller</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs py-8 border-t border-slate-800">
+    <div class="container mx-auto px-4 text-center space-y-4">
+      <p>© 2026 Técnicos Madrid PC. Todos los derechos reservados. Servicio técnico informático profesional.</p>
+      <div class="flex justify-center space-x-6 text-slate-500">
+        <a href="#" class="hover:text-slate-300 transition-colors">Aviso Legal</a>
+        <a href="#" class="hover:text-slate-300 transition-colors">Política de Privacidad</a>
+        <a href="#" class="hover:text-slate-300 transition-colors">Términos y Condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- BARRA DE ACCIÓN RÁPIDA MÓVIL (Sticky Bottom) -->
+  <div class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md border-t border-slate-800 p-2.5 flex lg:hidden justify-around items-center z-50">
+    <a href="tel:+34600000000" class="flex flex-col items-center gap-1 text-[10px] text-slate-300 hover:text-white">
+      <i data-lucide="phone" class="w-4 h-4 text-sky-400"></i>
+      <span class="leading-none">Llamar</span>
+    </a>
+    <a href="https://wa.me/34600000000" target="_blank" rel="noopener" class="btn-hover-effect inline-flex items-center justify-center gap-2 bg-emerald-500 text-white font-bold text-xs px-4 py-2 rounded-full shadow-lg shadow-emerald-500/20">
+      <i data-lucide="message-square" class="w-4 h-4"></i>
+      <span class="leading-none">WhatsApp</span>
+    </a>
+    <a href="#calculadora" class="flex flex-col items-center gap-1 text-[10px] text-slate-300 hover:text-white">
+      <i data-lucide="calculator" class="w-4 h-4 text-sky-400"></i>
+      <span class="leading-none">Calcular</span>
+    </a>
+  </div>
+
+  <!-- JAVASCRIPT DE INTERACTIVIDAD -->
+  <script>
+    lucide.createIcons();
+
+    // 1. Menú Móvil
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileNavLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 2. Calculadora Interactiva de Precios
+    const calcType = document.getElementById('calcType');
+    const calcDevice = document.getElementById('calcDevice');
+    const calcTotal = document.getElementById('calcTotal');
+    const calcBtn = document.getElementById('calcBtn');
+
+    function calculateTotal() {
+      const typePrice = parseFloat(calcType.value) || 0;
+      const devicePrice = parseFloat(calcDevice.value) || 0;
+      const urgencyRadio = document.querySelector('input[name="urgency"]:checked');
+      const urgencyPrice = urgencyRadio ? parseFloat(urgencyRadio.value) : 0;
+
+      const total = typePrice + devicePrice + urgencyPrice;
+      calcTotal.textContent = total.toFixed(2).replace('.', ',') + '€';
+    }
+
+    calcType.addEventListener('change', calculateTotal);
+    calcDevice.addEventListener('change', calculateTotal);
+    document.querySelectorAll('input[name="urgency"]').forEach(radio => {
+      radio.addEventListener('change', calculateTotal);
+    });
+
+    calcBtn.addEventListener('click', () => {
+      const totalStr = calcTotal.textContent;
+      const selectedType = calcType.options[calcType.selectedIndex].text;
+      const selectedDevice = calcDevice.options[calcDevice.selectedIndex].text;
+      
+      const message = `Hola, he calculado un presupuesto en la web de ${totalStr} para ${selectedType} en ${selectedDevice}. Quisiera reservar cita.`;
+      window.open(`https://wa.me/34600000000?text=${encodeURIComponent(message)}`, '_blank');
+    });
+
+    // 3. Filtros de Licencias Digitales
+    const filterBtns = document.querySelectorAll('.license-filter-btn');
+    const licenseCards = document.querySelectorAll('.license-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => {
+          b.classList.remove('bg-sky-600', 'text-white');
+          b.classList.add('bg-slate-100', 'text-slate-600');
+        });
+        btn.classList.remove('bg-slate-100', 'text-slate-600');
+        btn.classList.add('bg-sky-600', 'text-white');
+
+        const filter = btn.getAttribute('data-filter');
+        licenseCards.forEach(card => {
+          const categories = card.getAttribute('data-category');
+          if (filter === 'all' || categories.includes(filter)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

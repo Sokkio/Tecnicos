@@ -50,9 +50,13 @@
   <!-- NAVBAR -->
   <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-slate-100">
     <div class="container mx-auto px-4 py-2.5 flex justify-between items-center">
-      <!-- LOGO CON IMAGEN REAL -->
-      <a href="#" class="flex items-center gap-3 group">
-        <img src="logo.png" alt="Técnicos Madrid PC Logo" class="h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+      <!-- LOGO MÁS GRANDE CON NOMBRE A UN LADO -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <img src="logo.png" alt="Técnicos Madrid PC Logo" class="h-14 md:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105 shrink-0">
+        <div class="flex flex-col">
+          <span class="font-black text-lg md:text-xl text-slate-900 tracking-tight leading-tight">TÉCNICOS <span class="text-sky-600">MADRID</span> <span class="text-blue-700">PC</span></span>
+          <span class="text-[10px] md:text-xs font-bold uppercase text-slate-500 tracking-widest leading-none mt-0.5">Soporte e Informática Profesional</span>
+        </div>
       </a>
 
       <!-- MENÚ DE NAVEGACIÓN DESKTOP -->
@@ -396,18 +400,16 @@
     </div>
   </section>
 
- <!-- VENTA DE LICENCIAS DIGITALES CON EXPLICACIÓN DE PRECIOS COMPOSICIÓM SVG -->
+  <!-- VENTA DE LICENCIAS DIGITALES -->
   <section id="licencias" class="py-20 bg-white">
     <div class="container mx-auto px-4 max-w-6xl">
-      
-      <!-- Encabezado de la Sección -->
       <div class="text-center max-w-2xl mx-auto mb-10">
         <h2 class="text-xs font-bold uppercase tracking-widest text-sky-600 mb-2">Software Oficial Garantizado</h2>
         <h3 class="text-3xl md:text-4xl font-extrabold text-slate-900">Venta de Licencias Digitales</h3>
         <p class="text-slate-600 mt-3 text-sm md:text-base">Activación digital directa con envío por WhatsApp o E-mail. Pago 100% seguro por Bizum o Tarjeta.</p>
       </div>
 
-      <!-- BLOQUE INTRODUCTORIO: ¿POR QUÉ NUESTROS PRECIOS SON MÁS BAJOS? -->
+      <!-- BLOQUE INTRODUCTORIO -->
       <div class="max-w-4xl mx-auto bg-slate-50 rounded-2xl p-6 md:p-8 border border-slate-200/80 mb-12 shadow-sm">
         <div class="flex items-center gap-3 mb-4">
           <div class="p-2.5 bg-sky-500/10 text-sky-600 rounded-xl shrink-0 flex items-center justify-center">
@@ -436,7 +438,6 @@
         </div>
       </div>
 
-      <!-- Filtros de Categoría -->
       <div class="flex justify-center gap-2 mb-10 flex-wrap">
         <button class="license-filter-btn btn-hover-effect px-5 py-2 rounded-full text-xs font-semibold bg-sky-600 text-white inline-flex items-center justify-center leading-none" data-filter="all">Todas</button>
         <button class="license-filter-btn btn-hover-effect px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 inline-flex items-center justify-center leading-none" data-filter="windows">Windows</button>
@@ -444,7 +445,6 @@
         <button class="license-filter-btn btn-hover-effect px-5 py-2 rounded-full text-xs font-semibold bg-slate-100 text-slate-600 hover:bg-slate-200 inline-flex items-center justify-center leading-none" data-filter="security">Antivirus</button>
       </div>
 
-      <!-- Parrilla de Licencias -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         
         <!-- License 1: Windows 11 Pro -->
